@@ -1,62 +1,66 @@
-# Bài thực hành 5 – PricingService và Eureka
+# Bài thực hành 5 – Eureka và PricingService
 
-Repository này hoàn thiện hai task của bài thực hành: bổ sung implementation `PricingService` vào bộ API/test được cung cấp cho TH5 và đăng ký dịch vụ với Eureka.
+Repository này kế thừa solution microservices của Bài thực hành 4. Bài thực hành 5 tiếp tục trên cùng project, bổ sung code cho `PricingService`, cấu hình Eureka Service Registry và kiểm tra đăng ký service. Các project của những service khác được giữ lại để thể hiện trạng thái phát triển nối tiếp giữa hai bài.
 
-## Yêu cầu môi trường
+## Cấu trúc
 
-- .NET 8 SDK
-- Docker Desktop đang chạy
-- Java 8 được đóng gói trong Docker image build Eureka
+- `TH5InsuranceMicroservices.sln`: solution đầy đủ kế thừa từ Bài thực hành 4.
+- `PricingService.slnx`: solution con để mở và build riêng PricingService, API và các project kiểm thử.
+- `PricingService/`, `PricingService.Api/`, `PricingService.Test/`, `PricingService.IntegrationTest/`: service định giá, hợp đồng API, unit tests và integration tests.
+- `eureka-server/eureka-server/`: Eureka server được kế thừa từ Bài thực hành 4.
+- `AuthService`, `PolicyService`, `PaymentService`, `ProductService`, `ChatService`, `DashboardService`, `PolicySearchService`, `AgentPortalApiGateway`, `BlazorWasmClient`, `Web`, `postgres`, `scripts`: các thành phần còn lại của solution Bài thực hành 4.
+- `evidence/Eureka-PricingService-registered.png`: ảnh chụp khi `PricingService` đã hiển thị `UP` trong Eureka.
 
-## Khởi chạy trên Windows PowerShell
+## Chạy Eureka và PostgreSQL
 
-1. Tạo file cấu hình local từ mẫu và đặt mật khẩu PostgreSQL:
+Cần Docker Desktop với Docker Compose, .NET 8 SDK và kết nối NuGet. Tạo `.env` cục bộ từ mẫu, rồi đặt mật khẩu PostgreSQL trong file đó:
 
-   ```powershell
-   Copy-Item .env.example .env
-   notepad .env
-   ```
+```powershell
+Copy-Item .env.example .env
+```
 
-   Điền `POSTGRES_PASSWORD` trong `.env`. File này đã được loại khỏi Git.
+Khởi động hạ tầng:
 
-2. Khởi chạy Eureka và PostgreSQL:
+```powershell
+docker compose up --build -d eureka-server postgres
+```
 
-   ```powershell
-   docker compose up --build -d eureka-server postgres
-   ```
+Đặt connection string cho PricingService trong phiên PowerShell hiện tại, dùng cùng mật khẩu đã đặt trong `.env`:
 
-3. Chờ PostgreSQL sẵn sàng, sau đó cấu hình connection string cho cửa sổ PowerShell hiện tại và chạy dịch vụ:
+```powershell
+$env:ConnectionStrings__DefaultConnection = 'Host=localhost;Port=5432;Database=pricing;Username=postgres;Password=<POSTGRES_PASSWORD>'
+```
 
-   ```powershell
-   $env:ConnectionStrings__DefaultConnection = "Host=localhost;Port=5432;Database=pricing;Username=postgres;Password=<POSTGRES_PASSWORD>"
-   dotnet run --project .\PricingService\PricingService.csproj
-   ```
+Chạy PricingService từ thư mục gốc repository:
 
-   Thay `<POSTGRES_PASSWORD>` bằng giá trị trong `.env`. `PricingService` khởi tạo dữ liệu biểu phí khi khởi động.
+```powershell
+dotnet run --project .\PricingService
+```
 
-4. Kiểm tra Eureka tại [http://localhost:8761](http://localhost:8761). Trong danh sách instance phải có `PRICINGSERVICE`. API Swagger chạy tại [http://localhost:5040/swagger](http://localhost:5040/swagger).
+Mở <http://localhost:8761> và xác nhận `PRICINGSERVICE` xuất hiện trong danh sách instance với trạng thái `UP` tại cổng `5040`.
 
-5. Khi dừng, nhấn `Ctrl+C` trong cửa sổ chạy dịch vụ rồi dùng:
+Dừng Eureka và PostgreSQL:
 
-   ```powershell
-   docker compose down
-   ```
+```powershell
+docker compose down
+```
 
-   Lệnh trên giữ volume dữ liệu PostgreSQL. Không thêm `-v` nếu muốn giữ dữ liệu.
+## Build
 
-## Build và kiểm thử
+Build solution kế thừa đầy đủ:
+
+```powershell
+dotnet build .\TH5InsuranceMicroservices.sln --nologo
+```
+
+Hoặc chỉ build các project PricingService:
 
 ```powershell
 dotnet build .\PricingService.slnx --nologo
-dotnet test .\PricingService.slnx --nologo
 ```
 
-Integration test có thể cần Docker để tạo PostgreSQL riêng.
+## Cấu hình và tệp không đưa lên GitHub
 
-## Cấu hình Eureka
+Các `appsettings*.json` kế thừa của những service khác, `.env`, archive RAR, PDF đề, output build và database dump không được đưa vào repository. `PricingService/appsettings.json` là cấu hình Eureka công khai dành riêng cho bài thực hành; launch settings của PricingService được giữ để chạy trên cổng `5040`; mật khẩu database chỉ truyền qua biến môi trường. Tệp `.env.example` chỉ chứa tên biến và giá trị trống.
 
-Máy chủ Eureka lắng nghe cổng `8761`, tắt đăng ký/tải registry cho chính nó và dùng cấu hình trong `eureka-server/eureka-server/src/main/resources/application.yml`. Client `PricingService` dùng package Steeltoe `3.2.7`, đăng ký với `http://localhost:8761/eureka/` và công bố cổng `5040` trong `PricingService/appsettings.json`.
-
-## Minh chứng nộp bài
-
-Task 2 yêu cầu video hoặc PDF ảnh chụp cho thấy Eureka đã chạy trên máy cá nhân và có `PricingService` trong danh sách instance. Chỉ chụp màn hình sau khi thực hiện thành công các bước chạy ở trên; không dùng ảnh mẫu làm minh chứng.
+Các tệp source/asset đã giải nén từ Bài thực hành 4 được giữ lại; file nén gốc và nội dung sinh ra trong `bin`, `obj`, `.vs`, `node_modules` không được sao chép.

@@ -1,24 +1,19 @@
-# TH5 PricingService and Eureka
+# TH5 Insurance Microservices
 
-This .NET 8 submission contains the insurance pricing microservice, its supplied tests, and the Eureka server used for service discovery.
+This repository carries forward the TH4 insurance microservices solution and adds the TH5 PricingService and Eureka discovery work.
 
-## Commands
+## Stack
+- .NET 8, ASP.NET Core, MediatR, PostgreSQL, RabbitMQ, Elasticsearch, Steeltoe Eureka
+- Vue SPA and Blazor WebAssembly clients
 
-- Build: `dotnet build .\PricingService.slnx --nologo`
-- Unit and integration tests: `dotnet test .\PricingService.slnx --nologo`
-- Run the Eureka server and PostgreSQL: `docker compose up --build -d eureka-server postgres`
-- Run PricingService after configuring `ConnectionStrings__DefaultConnection`: `dotnet run --project .\PricingService\PricingService.csproj`
+## Build commands
+- Full solution: `dotnet build TH5InsuranceMicroservices.sln --nologo`
+- PricingService projects: `dotnet build PricingService.slnx --nologo`
+- Run TH5 service: `dotnet run --project ./PricingService`
 
-## Layout
+Do not run tests unless the user requests them. Integration tests may require Docker and external services.
 
-- `PricingService/`: ASP.NET Core implementation and Eureka client configuration.
-- `PricingService.Api/`: shared pricing API contracts supplied for TH5.
-- `PricingService.Test/`, `PricingService.IntegrationTest/`: supplied unit and integration tests.
-- `eureka-server/`: supplied Spring Boot Eureka server and `application.yml` on port 8761.
-
-## Gotchas
-
-- PricingService seeds tariffs on startup and needs a reachable PostgreSQL database.
-- Set `ConnectionStrings__DefaultConnection` to the same PostgreSQL instance started by Docker Compose.
-- Keep `.env` and machine-specific `appsettings.*.json` files local; `.env.example` contains variable names only.
-- Eureka client registration is configured for `localhost:8761` and PricingService listens on port 5040.
+## Project conventions and safety
+- Preserve the inherited service/API/test layout and change only what TH5 requires.
+- Keep `.env*`, `appsettings*.json` (except the reviewed, public `PricingService/appsettings.json`), secrets, database dumps, archives and build outputs out of Git.
+- The full solution includes copied TH4 projects. Eureka and PricingService are the TH5-specific runnable flow.
