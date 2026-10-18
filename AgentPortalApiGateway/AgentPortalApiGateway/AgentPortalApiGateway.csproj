@@ -6,6 +6,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\AgentPortalApiGateway.Api\AgentPortalApiGateway.Api.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.6.0" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.6" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.6" />
