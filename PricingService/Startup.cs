@@ -1,4 +1,4 @@
-﻿using GlobalExceptionHandler.WebApi;
+using GlobalExceptionHandler.WebApi;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -29,7 +29,14 @@ public class Startup
         services.AddControllers()
             .AddNewtonsoftJson(opt => { opt.SerializerSettings.TypeNameHandling = TypeNameHandling.Auto; });
 
-        services.AddMarten(Configuration.GetConnectionString("DefaultConnection"));
+        var connectionString = Configuration.GetConnectionString("DefaultConnection");
+        if (string.IsNullOrWhiteSpace(connectionString))
+        {
+            throw new System.InvalidOperationException(
+                "Missing connection string 'DefaultConnection'. Set the ConnectionStrings__DefaultConnection environment variable before starting PricingService.");
+        }
+
+        services.AddMarten(connectionString);
         services.AddPricingDemoInitializer();
         services.AddMediatR(options => options.RegisterServicesFromAssemblyContaining<Program>());
         services.AddLoggingBehavior();
@@ -48,8 +55,6 @@ public class Startup
             app.UseSwaggerUI();
         }
 
-        app.UseInitializer();
-        app.UseDiscoveryClient();
         app.UseEndpoints(endpoints => endpoints.MapControllers());
     }
 }

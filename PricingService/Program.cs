@@ -1,6 +1,9 @@
-﻿using System;
+using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PricingService.Init;
 using Serilog;
 using Serilog.Events;
 
@@ -8,7 +11,7 @@ namespace PricingService;
 
 public class Program
 {
-    public static void Main(string[] args)
+    public static async Task Main(string[] args)
     {
         Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Debug()
@@ -20,13 +23,18 @@ public class Program
         try
         {
             Log.Information("Starting web host");
-            CreateWebHostBuilder(args)
-                .Build()
-                .Run();
+            using var host = CreateWebHostBuilder(args).Build();
+            using (var scope = host.Services.CreateScope())
+            {
+                await scope.ServiceProvider.GetRequiredService<DataLoader>().Seed();
+            }
+
+            await host.RunAsync();
         }
         catch (Exception ex)
         {
             Log.Fatal(ex, "Host terminated unexpectedly");
+            Environment.ExitCode = 1;
         }
         finally
         {
