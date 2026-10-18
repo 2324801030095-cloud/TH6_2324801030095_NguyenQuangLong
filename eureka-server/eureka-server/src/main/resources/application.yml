@@ -2,6 +2,9 @@ server:
   port: 8761
 
 eureka:
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+    defaultOpenForTrafficCount: 0
   instance:
     hostname: localhost
   client:
