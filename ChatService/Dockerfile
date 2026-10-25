@@ -4,14 +4,14 @@ ENV APP_HOME /opt/app
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
-COPY PolicyService.Api/*.csproj $APP_HOME/PolicyService.Api/
-COPY ChatService.Api/*.csproj $APP_HOME/ChatService.Api/
-COPY ChatService/*.csproj $APP_HOME/ChatService/
+COPY PolicyService/PolicyService.Api/*.csproj $APP_HOME/PolicyService.Api/
+COPY ChatService/ChatService.Api/*.csproj $APP_HOME/ChatService.Api/
+COPY ChatService/ChatService/*.csproj $APP_HOME/ChatService/
 RUN  cd $APP_HOME/ChatService && dotnet restore
 
-COPY PolicyService.Api $APP_HOME/PolicyService.Api/
-COPY ChatService.Api $APP_HOME/ChatService.Api/
-COPY ChatService $APP_HOME/ChatService/
+COPY PolicyService/PolicyService.Api $APP_HOME/PolicyService.Api/
+COPY ChatService/ChatService.Api $APP_HOME/ChatService.Api/
+COPY ChatService/ChatService $APP_HOME/ChatService/
 RUN cd $APP_HOME/ChatService && dotnet build
 
 FROM build AS publish

@@ -4,18 +4,18 @@ ENV APP_HOME /opt/app
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
-COPY PricingService.Api/*.csproj $APP_HOME/PricingService.Api/
-COPY PricingService/*.csproj $APP_HOME/PricingService/
+COPY PricingService/PricingService.Api/*.csproj $APP_HOME/PricingService.Api/
+COPY PricingService/PricingService/*.csproj $APP_HOME/PricingService/
 RUN cd $APP_HOME/PricingService && dotnet restore
 
-COPY PricingService.Api $APP_HOME/PricingService.Api/
-COPY PricingService $APP_HOME/PricingService/
+COPY PricingService/PricingService.Api $APP_HOME/PricingService.Api/
+COPY PricingService/PricingService $APP_HOME/PricingService/
 RUN cd $APP_HOME/PricingService && dotnet build
 
-COPY PricingService.Test/*.csproj $APP_HOME/PricingService.Test/
+COPY PricingService/PricingService.Test/*.csproj $APP_HOME/PricingService.Test/
 RUN cd $APP_HOME/PricingService.Test && dotnet restore
 
-COPY PricingService.Test $APP_HOME/PricingService.Test/
+COPY PricingService/PricingService.Test $APP_HOME/PricingService.Test/
 RUN cd $APP_HOME/PricingService.Test && dotnet build
 
 FROM build AS test

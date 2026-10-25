@@ -4,14 +4,14 @@ ENV APP_HOME /opt/app
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
-COPY PolicyService.Api/*.csproj $APP_HOME/PolicyService.Api/
-COPY PolicySearchService.Api/*.csproj $APP_HOME/PolicySearchService.Api/
-COPY PolicySearchService/*.csproj $APP_HOME/PolicySearchService/
+COPY PolicyService/PolicyService.Api/*.csproj $APP_HOME/PolicyService.Api/
+COPY PolicySearchService/PolicySearchService.Api/*.csproj $APP_HOME/PolicySearchService.Api/
+COPY PolicySearchService/PolicySearchService/*.csproj $APP_HOME/PolicySearchService/
 RUN cd $APP_HOME/PolicySearchService && dotnet restore
 
-COPY PolicyService.Api $APP_HOME/PolicyService.Api/
-COPY PolicySearchService.Api $APP_HOME/PolicySearchService.Api/
-COPY PolicySearchService $APP_HOME/PolicySearchService/
+COPY PolicyService/PolicyService.Api $APP_HOME/PolicyService.Api/
+COPY PolicySearchService/PolicySearchService.Api $APP_HOME/PolicySearchService.Api/
+COPY PolicySearchService/PolicySearchService $APP_HOME/PolicySearchService/
 RUN cd $APP_HOME/PolicySearchService && dotnet build
 
 FROM build AS publish

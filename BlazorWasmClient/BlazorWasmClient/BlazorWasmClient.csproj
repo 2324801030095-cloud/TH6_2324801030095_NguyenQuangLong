@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
@@ -51,11 +51,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\DashboardService.Api\DashboardService.Api.csproj" />
-	  <ProjectReference Include="..\..\PolicySearchService.Api\PolicySearchService.Api.csproj" />
-	  <ProjectReference Include="..\..\PolicyService.Api\PolicyService.Api.csproj" />
-	  <ProjectReference Include="..\..\PricingService.Api\PricingService.Api.csproj" />
-	  <ProjectReference Include="..\..\ProductService.Api\ProductService.Api.csproj" />
+	  <ProjectReference Include="..\..\DashboardService\DashboardService.Api\DashboardService.Api.csproj" />
+	  <ProjectReference Include="..\..\PolicySearchService\PolicySearchService.Api\PolicySearchService.Api.csproj" />
+	  <ProjectReference Include="..\..\PolicyService\PolicyService.Api\PolicyService.Api.csproj" />
+	  <ProjectReference Include="..\..\PricingService\PricingService.Api\PricingService.Api.csproj" />
+	  <ProjectReference Include="..\..\ProductService\ProductService.Api\ProductService.Api.csproj" />
 	</ItemGroup>
 
 

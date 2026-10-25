@@ -4,10 +4,10 @@ ENV APP_HOME /opt/app
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
-COPY AuthService/*.csproj $APP_HOME/
+COPY AuthService/AuthService/*.csproj $APP_HOME/
 RUN cd $APP_HOME && dotnet restore
 
-COPY AuthService/ $APP_HOME/
+COPY AuthService/AuthService/ $APP_HOME/
 RUN cd $APP_HOME && dotnet build
 
 FROM build AS publish

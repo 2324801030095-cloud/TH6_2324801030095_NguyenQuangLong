@@ -9,11 +9,11 @@ This repository carries forward the TH4 insurance microservices solution and add
 ## Build commands
 - Full solution: `dotnet build TH5InsuranceMicroservices.sln --nologo`
 - PricingService projects: `dotnet build PricingService.slnx --nologo`
-- Run TH5 service: `dotnet run --project ./PricingService`
+- Run TH5 service: `dotnet run --project ./PricingService/PricingService`
 
 Do not run tests unless the user requests them. Integration tests may require Docker and external services.
 
 ## Project conventions and safety
 - Preserve the inherited service/API/test layout and change only what TH5 requires.
-- Keep `.env*`, `appsettings*.json` (except the reviewed, public `PricingService/appsettings.json`), secrets, database dumps, archives and build outputs out of Git.
+- Keep `.env*`, `appsettings*.json` (except the reviewed, public `PricingService/PricingService/appsettings.json`), secrets, database dumps, archives and build outputs out of Git.
 - The full solution includes copied TH4 projects. Eureka and PricingService are the TH5-specific runnable flow.

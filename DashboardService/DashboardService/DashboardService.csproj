@@ -18,7 +18,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\DashboardService.Api\DashboardService.Api.csproj" />
-        <ProjectReference Include="..\PolicyService.Api\PolicyService.Api.csproj" />
+        <ProjectReference Include="..\..\PolicyService\PolicyService.Api\PolicyService.Api.csproj" />
     </ItemGroup>
 
 

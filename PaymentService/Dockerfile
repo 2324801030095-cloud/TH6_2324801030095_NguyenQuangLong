@@ -4,20 +4,20 @@ ENV APP_HOME /opt/app
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
-COPY PolicyService.Api/*.csproj $APP_HOME/PolicyService.Api/
-COPY PaymentService.Api/*.csproj $APP_HOME/PaymentService.Api/
-COPY PaymentService/*.csproj $APP_HOME/PaymentService/
+COPY PolicyService/PolicyService.Api/*.csproj $APP_HOME/PolicyService.Api/
+COPY PaymentService/PaymentService.Api/*.csproj $APP_HOME/PaymentService.Api/
+COPY PaymentService/PaymentService/*.csproj $APP_HOME/PaymentService/
 RUN  cd $APP_HOME/PaymentService && dotnet restore
 
-COPY PolicyService.Api $APP_HOME/PolicyService.Api/
-COPY PaymentService.Api $APP_HOME/PaymentService.Api/
-COPY PaymentService $APP_HOME/PaymentService/
+COPY PolicyService/PolicyService.Api $APP_HOME/PolicyService.Api/
+COPY PaymentService/PaymentService.Api $APP_HOME/PaymentService.Api/
+COPY PaymentService/PaymentService $APP_HOME/PaymentService/
 RUN cd $APP_HOME/PaymentService && dotnet build
 
-COPY PaymentService.Test/*.csproj $APP_HOME/PaymentService.Test/
+COPY PaymentService/PaymentService.Test/*.csproj $APP_HOME/PaymentService.Test/
 RUN cd $APP_HOME/PaymentService.Test && dotnet restore
 
-COPY PaymentService.Test .$APP_HOME/PaymentService.Test/
+COPY PaymentService/PaymentService.Test .$APP_HOME/PaymentService.Test/
 RUN cd $APP_HOME/PaymentService.Test && dotnet build
 
 FROM build AS test

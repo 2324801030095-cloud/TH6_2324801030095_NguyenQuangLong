@@ -4,20 +4,20 @@ ENV APP_HOME /opt/app
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
-COPY PricingService.Api/*.csproj $APP_HOME/PricingService.Api/
-COPY PolicyService.Api/*.csproj $APP_HOME/PolicyService.Api/
-COPY PolicyService/*.csproj $APP_HOME/PolicyService/
+COPY PricingService/PricingService.Api/*.csproj $APP_HOME/PricingService.Api/
+COPY PolicyService/PolicyService.Api/*.csproj $APP_HOME/PolicyService.Api/
+COPY PolicyService/PolicyService/*.csproj $APP_HOME/PolicyService/
 RUN cd $APP_HOME/PolicyService && dotnet restore
 
-COPY PricingService.Api $APP_HOME/PricingService.Api/
-COPY PolicyService.Api $APP_HOME/PolicyService.Api/
-COPY PolicyService $APP_HOME/PolicyService/
+COPY PricingService/PricingService.Api $APP_HOME/PricingService.Api/
+COPY PolicyService/PolicyService.Api $APP_HOME/PolicyService.Api/
+COPY PolicyService/PolicyService $APP_HOME/PolicyService/
 RUN cd PolicyService && dotnet build
 
-COPY PolicyService.Test/*.csproj $APP_HOME/PolicyService.Test/
+COPY PolicyService/PolicyService.Test/*.csproj $APP_HOME/PolicyService.Test/
 RUN cd $APP_HOME/PolicyService.Test && dotnet restore
 
-COPY PolicyService.Test ./policy-service/PolicyService.Test/
+COPY PolicyService/PolicyService.Test ./policy-service/PolicyService.Test/
 RUN cd $APP_HOME/PolicyService.Test && dotnet build
 
 FROM build AS test

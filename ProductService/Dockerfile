@@ -4,18 +4,18 @@ ENV APP_HOME /opt/app
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
-COPY ProductService.Api/*.csproj $APP_HOME/ProductService.Api/
-COPY ProductService/*.csproj $APP_HOME/ProductService/
+COPY ProductService/ProductService.Api/*.csproj $APP_HOME/ProductService.Api/
+COPY ProductService/ProductService/*.csproj $APP_HOME/ProductService/
 RUN  cd $APP_HOME/ProductService && dotnet restore
 
-COPY ProductService.Api $APP_HOME/ProductService.Api/
-COPY ProductService $APP_HOME/ProductService/
+COPY ProductService/ProductService.Api $APP_HOME/ProductService.Api/
+COPY ProductService/ProductService $APP_HOME/ProductService/
 RUN cd $APP_HOME/ProductService && dotnet build
 
-COPY ProductService.Test/*.csproj $APP_HOME/ProductService.Test/
+COPY ProductService/ProductService.Test/*.csproj $APP_HOME/ProductService.Test/
 RUN cd $APP_HOME/ProductService.Test && dotnet restore
 
-COPY ProductService.Test $APP_HOME/ProductService.Test/
+COPY ProductService/ProductService.Test $APP_HOME/ProductService.Test/
 RUN cd $APP_HOME/ProductService.Test && dotnet build
 
 FROM build AS test

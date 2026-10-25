@@ -4,14 +4,14 @@ ENV APP_HOME /opt/app
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
-COPY DashboardService.Api/*.csproj $APP_HOME/DashboardService.Api/
-COPY PolicyService.Api/*.csproj $APP_HOME/PolicyService.Api/
-COPY DashboardService/*.csproj $APP_HOME/DashboardService/
+COPY DashboardService/DashboardService.Api/*.csproj $APP_HOME/DashboardService.Api/
+COPY PolicyService/PolicyService.Api/*.csproj $APP_HOME/PolicyService.Api/
+COPY DashboardService/DashboardService/*.csproj $APP_HOME/DashboardService/
 RUN  cd $APP_HOME/DashboardService && dotnet restore
 
-COPY DashboardService.Api $APP_HOME/DashboardService.Api/
-COPY PolicyService.Api $APP_HOME/PolicyService.Api/
-COPY DashboardService $APP_HOME/DashboardService/
+COPY DashboardService/DashboardService.Api $APP_HOME/DashboardService.Api/
+COPY PolicyService/PolicyService.Api $APP_HOME/PolicyService.Api/
+COPY DashboardService/DashboardService $APP_HOME/DashboardService/
 RUN cd $APP_HOME/DashboardService && dotnet build
 
 FROM build AS publish

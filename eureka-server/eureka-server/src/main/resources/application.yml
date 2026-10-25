@@ -4,7 +4,7 @@ server:
 eureka:
   server:
     waitTimeInMsWhenSyncEmpty: 0
-    defaultOpenForTrafficCount: 0
+    renewalPercentThreshold: 0.25
   instance:
     hostname: localhost
   client:
