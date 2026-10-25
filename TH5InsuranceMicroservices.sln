@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
@@ -81,125 +81,121 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PricingService", "PricingSe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProductService", "ProductService", "{DBE3B558-71B9-44C2-8DF0-1E5085448E81}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{75B7D234-D76E-4D54-BE60-B032E1172595}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{59CB22BE-1D9F-4DF6-8533-08CDF4E39D0D}"
 	ProjectSection(SolutionItems) = preProject
-		scripts\scripts\app-build.sh = scripts\scripts\app-build.sh
-		scripts\scripts\app-down.sh = scripts\scripts\app-down.sh
-		scripts\scripts\app-logs.sh = scripts\scripts\app-logs.sh
-		scripts\scripts\app-run.sh = scripts\scripts\app-run.sh
-		scripts\scripts\app.yml = scripts\scripts\app.yml
-		scripts\scripts\build-without-tests.bat = scripts\scripts\build-without-tests.bat
-		scripts\scripts\build-without-tests.sh = scripts\scripts\build-without-tests.sh
-		scripts\scripts\build.bat = scripts\scripts\build.bat
-		scripts\scripts\build.sh = scripts\scripts\build.sh
-		scripts\scripts\infra-build.sh = scripts\scripts\infra-build.sh
-		scripts\scripts\infra-down.sh = scripts\scripts\infra-down.sh
-		scripts\scripts\infra-logs.sh = scripts\scripts\infra-logs.sh
-		scripts\scripts\infra-run.sh = scripts\scripts\infra-run.sh
-		scripts\scripts\infra.yml = scripts\scripts\infra.yml
-		scripts\scripts\rabbitmq-isolated.conf = scripts\scripts\rabbitmq-isolated.conf
+		scripts\app-build.sh = scripts\app-build.sh
+		scripts\app-down.sh = scripts\app-down.sh
+		scripts\app-logs.sh = scripts\app-logs.sh
+		scripts\app-run.sh = scripts\app-run.sh
+		scripts\app.yml = scripts\app.yml
+		scripts\build-without-tests.bat = scripts\build-without-tests.bat
+		scripts\build-without-tests.sh = scripts\build-without-tests.sh
+		scripts\build.bat = scripts\build.bat
+		scripts\build.sh = scripts\build.sh
+		scripts\infra-build.sh = scripts\infra-build.sh
+		scripts\infra-down.sh = scripts\infra-down.sh
+		scripts\infra-logs.sh = scripts\infra-logs.sh
+		scripts\infra-run.sh = scripts\infra-run.sh
+		scripts\infra.yml = scripts\infra.yml
+		scripts\rabbitmq-isolated.conf = scripts\rabbitmq-isolated.conf
 	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{FC1437A9-173C-4BF3-B720-8E173ED5E4E4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{B893FF2F-3C48-4DC0-B482-82B8BD875657}"
 	ProjectSection(SolutionItems) = preProject
-		Web\Web\.dockerignore = Web\Web\.dockerignore
-		Web\Web\babel.config.js = Web\Web\babel.config.js
-		Web\Web\Dockerfile = Web\Web\Dockerfile
-		Web\Web\nginx.conf = Web\Web\nginx.conf
-		Web\Web\package-lock.json = Web\Web\package-lock.json
-		Web\Web\package.json = Web\Web\package.json
-		Web\Web\yarn.lock = Web\Web\yarn.lock
+		Web\.dockerignore = Web\.dockerignore
+		Web\.gitignore = Web\.gitignore
+		Web\README.md = Web\README.md
+		Web\babel.config.js = Web\babel.config.js
+		Web\Dockerfile = Web\Dockerfile
+		Web\nginx.conf = Web\nginx.conf
+		Web\package-lock.json = Web\package-lock.json
+		Web\package.json = Web\package.json
+		Web\yarn.lock = Web\yarn.lock
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "public", "public", "{D6174FDB-A393-4C1C-B1A4-36C30D2684E8}"
 	ProjectSection(SolutionItems) = preProject
-		Web\Web\public\favicon.ico = Web\Web\public\favicon.ico
-		Web\Web\public\index.html = Web\Web\public\index.html
+		Web\public\favicon.ico = Web\public\favicon.ico
+		Web\public\index.html = Web\public\index.html
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FABA746F-4DC7-499E-B64F-0DA2771F10B4}"
 	ProjectSection(SolutionItems) = preProject
-		Web\Web\src\App.vue = Web\Web\src\App.vue
-		Web\Web\src\main.js = Web\Web\src\main.js
-		Web\Web\src\router.js = Web\Web\src\router.js
+		Web\src\App.vue = Web\src\App.vue
+		Web\src\main.js = Web\src\main.js
+		Web\src\router.js = Web\src\router.js
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "static", "static", "{97B88681-16AB-4D6F-8147-EB9D08A5030A}"
 	ProjectSection(SolutionItems) = preProject
-		Web\Web\public\static\car.jpg = Web\Web\public\static\car.jpg
-		Web\Web\public\static\farm.jpg = Web\Web\public\static\farm.jpg
-		Web\Web\public\static\house.jpg = Web\Web\public\static\house.jpg
-		Web\Web\public\static\travel.jpg = Web\Web\public\static\travel.jpg
+		Web\public\static\car.jpg = Web\public\static\car.jpg
+		Web\public\static\farm.jpg = Web\public\static\farm.jpg
+		Web\public\static\house.jpg = Web\public\static\house.jpg
+		Web\public\static\travel.jpg = Web\public\static\travel.jpg
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "avatars", "avatars", "{A1FA7C54-D6F6-4FE7-B1F0-63EFE3580FB5}"
 	ProjectSection(SolutionItems) = preProject
-		Web\Web\public\static\avatars\admin.png = Web\Web\public\static\avatars\admin.png
-		Web\Web\public\static\avatars\agent1.png = Web\Web\public\static\avatars\agent1.png
-		Web\Web\public\static\avatars\danny_solid.png = Web\Web\public\static\avatars\danny_solid.png
-		Web\Web\public\static\avatars\jimmy_solid.png = Web\Web\public\static\avatars\jimmy_solid.png
+		Web\public\static\avatars\admin.png = Web\public\static\avatars\admin.png
+		Web\public\static\avatars\agent1.png = Web\public\static\avatars\agent1.png
+		Web\public\static\avatars\danny_solid.png = Web\public\static\avatars\danny_solid.png
+		Web\public\static\avatars\jimmy_solid.png = Web\public\static\avatars\jimmy_solid.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{2DE3D9BC-6BB4-4784-8DFD-9A250CEBDD73}"
 	ProjectSection(SolutionItems) = preProject
-		Web\Web\src\assets\logo_horizontal.png = Web\Web\src\assets\logo_horizontal.png
-		Web\Web\src\assets\logo.png = Web\Web\src\assets\logo.png
+		Web\src\assets\logo_horizontal.png = Web\src\assets\logo_horizontal.png
+		Web\src\assets\logo.png = Web\src\assets\logo.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{4F563DFB-3D3C-4DDE-AA3C-9855E9745FD6}"
 	ProjectSection(SolutionItems) = preProject
-		Web\Web\src\components\Account.vue = Web\Web\src\components\Account.vue
-		Web\Web\src\components\Chat.vue = Web\Web\src\components\Chat.vue
-		Web\Web\src\components\Chatbot.vue = Web\Web\src\components\Chatbot.vue
-		Web\Web\src\components\CoverList.vue = Web\Web\src\components\CoverList.vue
-		Web\Web\src\components\Dashboard.vue = Web\Web\src\components\Dashboard.vue
-		Web\Web\src\components\Home.vue = Web\Web\src\components\Home.vue
-		Web\Web\src\components\PolicyCreate.vue = Web\Web\src\components\PolicyCreate.vue
-		Web\Web\src\components\PolicyDetails.vue = Web\Web\src\components\PolicyDetails.vue
-		Web\Web\src\components\PolicyList.vue = Web\Web\src\components\PolicyList.vue
-		Web\Web\src\components\ProductCard.vue = Web\Web\src\components\ProductCard.vue
-		Web\Web\src\components\ProductDetails.vue = Web\Web\src\components\ProductDetails.vue
-		Web\Web\src\components\ProductList.vue = Web\Web\src\components\ProductList.vue
-		Web\Web\src\components\SalesAgents.vue = Web\Web\src\components\SalesAgents.vue
-		Web\Web\src\components\SalesBar.js = Web\Web\src\components\SalesBar.js
-		Web\Web\src\components\SalesDistribution.vue = Web\Web\src\components\SalesDistribution.vue
-		Web\Web\src\components\SalesLines.js = Web\Web\src\components\SalesLines.js
-		Web\Web\src\components\SalesPie.js = Web\Web\src\components\SalesPie.js
-		Web\Web\src\components\SalesTrendsLines.vue = Web\Web\src\components\SalesTrendsLines.vue
-		Web\Web\src\components\TotalSalesCard.vue = Web\Web\src\components\TotalSalesCard.vue
+		Web\src\components\Account.vue = Web\src\components\Account.vue
+		Web\src\components\Chat.vue = Web\src\components\Chat.vue
+		Web\src\components\Chatbot.vue = Web\src\components\Chatbot.vue
+		Web\src\components\CoverList.vue = Web\src\components\CoverList.vue
+		Web\src\components\Dashboard.vue = Web\src\components\Dashboard.vue
+		Web\src\components\Home.vue = Web\src\components\Home.vue
+		Web\src\components\PolicyCreate.vue = Web\src\components\PolicyCreate.vue
+		Web\src\components\PolicyDetails.vue = Web\src\components\PolicyDetails.vue
+		Web\src\components\PolicyList.vue = Web\src\components\PolicyList.vue
+		Web\src\components\ProductCard.vue = Web\src\components\ProductCard.vue
+		Web\src\components\ProductDetails.vue = Web\src\components\ProductDetails.vue
+		Web\src\components\ProductList.vue = Web\src\components\ProductList.vue
+		Web\src\components\SalesAgents.vue = Web\src\components\SalesAgents.vue
+		Web\src\components\SalesBar.js = Web\src\components\SalesBar.js
+		Web\src\components\SalesDistribution.vue = Web\src\components\SalesDistribution.vue
+		Web\src\components\SalesLines.js = Web\src\components\SalesLines.js
+		Web\src\components\SalesPie.js = Web\src\components\SalesPie.js
+		Web\src\components\SalesTrendsLines.vue = Web\src\components\SalesTrendsLines.vue
+		Web\src\components\TotalSalesCard.vue = Web\src\components\TotalSalesCard.vue
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "views", "views", "{5B3DECF2-99CB-4729-B5B7-FC6F001D4D17}"
 	ProjectSection(SolutionItems) = preProject
-		Web\Web\src\views\AccountView.vue = Web\Web\src\views\AccountView.vue
-		Web\Web\src\views\ChatbotView.vue = Web\Web\src\views\ChatbotView.vue
-		Web\Web\src\views\ChatView.vue = Web\Web\src\views\ChatView.vue
-		Web\Web\src\views\DashboardView.vue = Web\Web\src\views\DashboardView.vue
-		Web\Web\src\views\HomeView.vue = Web\Web\src\views\HomeView.vue
-		Web\Web\src\views\PoliciesView.vue = Web\Web\src\views\PoliciesView.vue
-		Web\Web\src\views\PolicyCreateView.vue = Web\Web\src\views\PolicyCreateView.vue
-		Web\Web\src\views\PolicyDetailsView.vue = Web\Web\src\views\PolicyDetailsView.vue
-		Web\Web\src\views\ProductDetailsView.vue = Web\Web\src\views\ProductDetailsView.vue
-		Web\Web\src\views\ProductsView.vue = Web\Web\src\views\ProductsView.vue
+		Web\src\views\AccountView.vue = Web\src\views\AccountView.vue
+		Web\src\views\ChatbotView.vue = Web\src\views\ChatbotView.vue
+		Web\src\views\ChatView.vue = Web\src\views\ChatView.vue
+		Web\src\views\DashboardView.vue = Web\src\views\DashboardView.vue
+		Web\src\views\HomeView.vue = Web\src\views\HomeView.vue
+		Web\src\views\PoliciesView.vue = Web\src\views\PoliciesView.vue
+		Web\src\views\PolicyCreateView.vue = Web\src\views\PolicyCreateView.vue
+		Web\src\views\PolicyDetailsView.vue = Web\src\views\PolicyDetailsView.vue
+		Web\src\views\ProductDetailsView.vue = Web\src\views\ProductDetailsView.vue
+		Web\src\views\ProductsView.vue = Web\src\views\ProductsView.vue
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "http", "http", "{B34DCB39-E537-428B-A8D7-63B1D8DF361B}"
 	ProjectSection(SolutionItems) = preProject
-		Web\Web\src\components\http\ApiClient.js = Web\Web\src\components\http\ApiClient.js
-		Web\Web\src\components\http\Auth.js = Web\Web\src\components\http\Auth.js
-		Web\Web\src\components\http\WebSocket.js = Web\Web\src\components\http\WebSocket.js
+		Web\src\components\http\ApiClient.js = Web\src\components\http\ApiClient.js
+		Web\src\components\http\Auth.js = Web\src\components\http\Auth.js
+		Web\src\components\http\WebSocket.js = Web\src\components\http\WebSocket.js
 	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "postgres", "postgres", "{B2198216-39BB-426C-A078-67ACCAF593BA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "postgres", "postgres", "{A8FD2A9E-A9ED-474C-99CB-F11265ACB473}"
 	ProjectSection(SolutionItems) = preProject
-		postgres\postgres\createdatabases.sql = postgres\postgres\createdatabases.sql
-		postgres\postgres\Dockerfile = postgres\postgres\Dockerfile
+		postgres\createdatabases.sql = postgres\createdatabases.sql
+		postgres\Dockerfile = postgres\Dockerfile
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "eureka-server", "eureka-server", "{E8C1018F-638F-4D29-AE28-F452A54ECD30}"
@@ -309,8 +305,6 @@ Global
 		{B3C6324A-A08E-44B3-B0C9-CBD9AD6D529E} = {FE439ABF-36AD-47D6-A07B-1FBCF6D1DA2F}
 		{7F95765F-F29F-4C3A-91BB-D4DF26875390} = {FE439ABF-36AD-47D6-A07B-1FBCF6D1DA2F}
 		{D94EA1D6-4468-4D0C-91E2-04886970F6E9} = {FE439ABF-36AD-47D6-A07B-1FBCF6D1DA2F}
-		{59CB22BE-1D9F-4DF6-8533-08CDF4E39D0D} = {75B7D234-D76E-4D54-BE60-B032E1172595}
-		{B893FF2F-3C48-4DC0-B482-82B8BD875657} = {FC1437A9-173C-4BF3-B720-8E173ED5E4E4}
 		{D6174FDB-A393-4C1C-B1A4-36C30D2684E8} = {B893FF2F-3C48-4DC0-B482-82B8BD875657}
 		{FABA746F-4DC7-499E-B64F-0DA2771F10B4} = {B893FF2F-3C48-4DC0-B482-82B8BD875657}
 		{97B88681-16AB-4D6F-8147-EB9D08A5030A} = {D6174FDB-A393-4C1C-B1A4-36C30D2684E8}
@@ -319,7 +313,6 @@ Global
 		{4F563DFB-3D3C-4DDE-AA3C-9855E9745FD6} = {FABA746F-4DC7-499E-B64F-0DA2771F10B4}
 		{5B3DECF2-99CB-4729-B5B7-FC6F001D4D17} = {FABA746F-4DC7-499E-B64F-0DA2771F10B4}
 		{B34DCB39-E537-428B-A8D7-63B1D8DF361B} = {4F563DFB-3D3C-4DDE-AA3C-9855E9745FD6}
-		{A8FD2A9E-A9ED-474C-99CB-F11265ACB473} = {B2198216-39BB-426C-A078-67ACCAF593BA}
 		{64C8D019-EB8C-4A3B-ABE4-33A3E7BBA9C3} = {E8C1018F-638F-4D29-AE28-F452A54ECD30}
 		{1BE450C4-7FFA-4A00-975F-369442DB905C} = {E8C1018F-638F-4D29-AE28-F452A54ECD30}
 		{AE76E1B8-23B8-4835-9FF1-C1AF4924CEDF} = {E8C1018F-638F-4D29-AE28-F452A54ECD30}
