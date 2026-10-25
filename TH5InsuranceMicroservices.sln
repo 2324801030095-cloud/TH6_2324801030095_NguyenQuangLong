@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthService", "AuthService\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazorWasmClient", "BlazorWasmClient", "{9CE148F2-AF56-F956-698D-C38496F63749}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWasmClient", "BlazorWasmClient\BlazorWasmClient\BlazorWasmClient.csproj", "{247061E2-3B84-4554-BEF4-F5F4580B7E06}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWasmClient", "BlazorWasmClient\BlazorWasmClient.csproj", "{247061E2-3B84-4554-BEF4-F5F4580B7E06}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DashboardService.Api", "DashboardService\DashboardService.Api\DashboardService.Api.csproj", "{9296CE6E-E8DD-443B-AB04-B264EEE3C485}"
 EndProject
