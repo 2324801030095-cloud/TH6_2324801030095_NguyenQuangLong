@@ -13,7 +13,7 @@ Repository này kế thừa solution microservices của Bài thực hành 4. B�
 - `TH5InsuranceMicroservices.sln`: solution đầy đủ kế thừa từ Bài thực hành 4.
 - `PricingService.slnx`: solution con để mở và build riêng PricingService, API và các project kiểm thử.
 - `PricingService/PricingService/`, `PricingService/PricingService.Api/`, `PricingService/PricingService.Test/`, `PricingService/PricingService.IntegrationTest/`: service định giá, hợp đồng API, unit tests và integration tests.
-- `eureka-server/eureka-server/`: Eureka server được kế thừa từ Bài thực hành 4.
+- `eureka-server/`: Eureka server được kế thừa từ Bài thực hành 4.
 - `AuthService`, `PolicyService`, `PaymentService`, `ProductService`, `ChatService`, `DashboardService`, `PolicySearchService`, `AgentPortalApiGateway`, `BlazorWasmClient`, `Web`, `postgres`, `scripts`: các thành phần còn lại của solution Bài thực hành 4.
 - `evidence/Eureka-PricingService-registered.png`: ảnh chụp khi `PricingService` đã hiển thị `UP` trong Eureka.
 

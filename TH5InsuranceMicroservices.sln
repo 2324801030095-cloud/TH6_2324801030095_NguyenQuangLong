@@ -208,10 +208,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "eureka-server", "eureka-ser
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "eureka-server", "eureka-server", "{64C8D019-EB8C-4A3B-ABE4-33A3E7BBA9C3}"
 	ProjectSection(SolutionItems) = preProject
-		eureka-server\eureka-server\build.gradle = eureka-server\eureka-server\build.gradle
-		eureka-server\eureka-server\Dockerfile = eureka-server\eureka-server\Dockerfile
-		eureka-server\eureka-server\gradlew = eureka-server\eureka-server\gradlew
-		eureka-server\eureka-server\gradlew.bat = eureka-server\eureka-server\gradlew.bat
+		eureka-server\build.gradle = eureka-server\build.gradle
+		eureka-server\Dockerfile = eureka-server\Dockerfile
+		eureka-server\gradlew = eureka-server\gradlew
+		eureka-server\gradlew.bat = eureka-server\gradlew.bat
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gradle", "gradle", "{1BE450C4-7FFA-4A00-975F-369442DB905C}"
@@ -224,8 +224,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CB4E956D-2BF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wrapper", "wrapper", "{541CC91C-3FA1-4DB3-9A2C-A97AAB624DE1}"
 	ProjectSection(SolutionItems) = preProject
-		eureka-server\eureka-server\gradle\wrapper\gradle-wrapper.jar = eureka-server\eureka-server\gradle\wrapper\gradle-wrapper.jar
-		eureka-server\eureka-server\gradle\wrapper\gradle-wrapper.properties = eureka-server\eureka-server\gradle\wrapper\gradle-wrapper.properties
+		eureka-server\gradle\wrapper\gradle-wrapper.jar = eureka-server\gradle\wrapper\gradle-wrapper.jar
+		eureka-server\gradle\wrapper\gradle-wrapper.properties = eureka-server\gradle\wrapper\gradle-wrapper.properties
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "main", "main", "{E93B34E5-73C6-410C-B1CA-D5F9ADF80AE7}"
@@ -234,7 +234,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "java", "java", "{4177FC64-8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "resources", "resources", "{E0AFB2CD-A7EB-457E-90C1-D3C86F8514E7}"
 	ProjectSection(SolutionItems) = preProject
-		eureka-server\eureka-server\src\main\resources\application.yml = eureka-server\eureka-server\src\main\resources\application.yml
+		eureka-server\src\main\resources\application.yml = eureka-server\src\main\resources\application.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "net", "net", "{5A3D551B-4AD3-4D77-BF37-58A25B334A50}"
@@ -245,7 +245,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "microservices", "microservi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "eurekaserver", "eurekaserver", "{23E60444-5AB2-4D78-8E0B-0314F8CD44AB}"
 	ProjectSection(SolutionItems) = preProject
-		eureka-server\eureka-server\src\main\java\net\chrisrichardson\microservices\eurekaserver\EurekaServer.java = eureka-server\eureka-server\src\main\java\net\chrisrichardson\microservices\eurekaserver\EurekaServer.java
+		eureka-server\src\main\java\net\chrisrichardson\microservices\eurekaserver\EurekaServer.java = eureka-server\src\main\java\net\chrisrichardson\microservices\eurekaserver\EurekaServer.java
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wrapper", "wrapper", "{83308AB9-D51D-48DA-B6A0-286CE158FE1D}"
