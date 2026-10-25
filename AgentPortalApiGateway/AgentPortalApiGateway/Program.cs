@@ -3,6 +3,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -25,6 +26,7 @@ public class Program
         var key = Encoding.ASCII.GetBytes("THIS_IS_A_RANDOM_SECRET_2e7a1e80-16ee-4e52-b5c6-5e8892453459");
 
         return WebHost.CreateDefaultBuilder(args)
+            .UseUrls("http://localhost:8099")
             .ConfigureAppConfiguration((hostingContext, config) =>
             {
                 config
@@ -72,6 +74,17 @@ public class Program
                     .AllowAnyHeader()
                     .AllowCredentials()
                 );
+                a.Use(async (context, next) =>
+                {
+                    if (context.Request.Path == "/" && HttpMethods.IsGet(context.Request.Method))
+                    {
+                        context.Response.ContentType = "text/plain; charset=utf-8";
+                        await context.Response.WriteAsync("Agent Portal API Gateway is running.");
+                        return;
+                    }
+
+                    await next();
+                });
                 a.UseOcelot().Wait();
             })
             .Build();

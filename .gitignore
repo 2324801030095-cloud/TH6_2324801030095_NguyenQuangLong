@@ -18,5 +18,6 @@
 !**/.env.example
 **/appsettings*.json
 !PricingService/appsettings.json
+!AgentPortalApiGateway/AgentPortalApiGateway/appsettings.json
 **/secrets.json
 *.log

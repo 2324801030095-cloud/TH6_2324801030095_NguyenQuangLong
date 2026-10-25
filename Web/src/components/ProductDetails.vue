@@ -109,6 +109,7 @@
 
 <script>
     import {HTTP} from "./http/ApiClient";
+    import Auth from "./http/Auth";
 
     export default {
         name: 'ProductDetails',
@@ -170,7 +171,8 @@
                 return request;
             },
             calculatePrice: function () {
-                HTTP.post('offers', this.createRequest()).then(response => {
+                const endpoint = Auth.isAuthenticated() ? 'offers/agent' : 'offers';
+                HTTP.post(endpoint, this.createRequest()).then(response => {
                     this.mode = 'VIEW';
                     this.price.amountToPay = response.data.totalPrice;
                     this.offerNumber = response.data.offerNumber;

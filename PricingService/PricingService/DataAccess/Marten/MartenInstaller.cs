@@ -3,6 +3,7 @@ using Marten.Services;
 using Microsoft.Extensions.DependencyInjection;
 using PricingService.Domain;
 using Weasel.Core;
+using JasperFx;
 
 namespace PricingService.DataAccess.Marten;
 
@@ -31,7 +32,7 @@ public static class MartenInstaller
     {
         var serializer = new JsonNetSerializer();
 
-        serializer.Customize(_ => { _.ContractResolver = new ProtectedSettersContractResolver(); });
+        serializer.Configure(_ => { _.ContractResolver = new ProtectedSettersContractResolver(); });
 
         return serializer;
     }
