@@ -4,7 +4,7 @@ Repository này tiếp nối solution microservices của Bài thực hành 5. B
 
 ## Cấu trúc
 
-- `TH5InsuranceMicroservices.sln`: solution đầy đủ kế thừa từ Bài thực hành 4.
+- `TH6InsuranceMicroservices.sln`: solution đầy đủ kế thừa từ Bài thực hành 4 và được dùng cho Bài thực hành 6.
 - `PricingService.slnx`: solution con để mở và build riêng PricingService, API và các project kiểm thử.
 - `PricingService/`, `PricingService.Api/`, `PricingService.Test/`, `PricingService.IntegrationTest/`: service định giá, hợp đồng API, unit tests và integration tests.
 - `eureka-server/eureka-server/`: Eureka server được kế thừa từ Bài thực hành 4.
@@ -64,7 +64,7 @@ docker compose down
 Build solution kế thừa đầy đủ:
 
 ```powershell
-dotnet build .\TH5InsuranceMicroservices.sln --nologo
+dotnet build .\TH6InsuranceMicroservices.sln --nologo
 ```
 
 Hoặc chỉ build các project PricingService:

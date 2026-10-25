@@ -7,7 +7,7 @@ This repository carries forward the TH4 insurance microservices solution and add
 - Vue SPA and Blazor WebAssembly clients
 
 ## Build commands
-- Full solution: `dotnet build TH5InsuranceMicroservices.sln --nologo`
+- Full solution: `dotnet build TH6InsuranceMicroservices.sln --nologo`
 - PricingService projects: `dotnet build PricingService.slnx --nologo`
 - Run TH5 service: `dotnet run --project ./PricingService`
 
